@@ -1,4 +1,5 @@
 # Perl application that generates Spring Boot Logs
+## How it works
 Spring Boot logs are Logback formatted as the following samples:
 ```
 service1.log:2016-02-26 11:15:47.561  INFO [service1,2485ec27856c56f4,2485ec27856c56f4,true] 68058 --- [nio-8081-exec-1] i.s.c.sleuth.docs.service1.Application   : Hello from service1. Calling service2
@@ -22,3 +23,19 @@ java.net.SocketException: Unrecognized Windows Sockets error: 0: JVM_Bind
         at org.jboss.Main\$1.run(Main.java:438)
         at java.lang.Thread.run(Thread.java:595)
 ```
+## How to use it in OpenShift
+1. Log in to OpenShift Console.
+2. Type Perl in the Catalog and select Perl Builder
+3. Select a new project name, give it an application name and the GitHub URL
+4. After the pod is deployed edit deployment config yaml file and apply the following change
+```
+   spec:
+      containers:
+        - args:
+            - /opt/app-root/src/noise.pl
+          command:
+            - perl
+ ``` 
+ 5. This change will trigger a new deployment and a new pod will be created.
+ 6. Check in the pod logs that the Spring Boot logs are printed in stdout
+ 7. Check also the arhived logs in Kibana
