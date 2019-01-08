@@ -1,4 +1,6 @@
 # Perl application that generates Spring Boot Logback Logs
+## Creator
+[George Bouras](https://github.com/GeorgeBouras)
 ## How it works
 Spring Boot logs are Logback formatted as the following samples:
 ```
