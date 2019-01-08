@@ -26,13 +26,13 @@ java.net.SocketException: Unrecognized Windows Sockets error: 0: JVM_Bind
 ## How to use it in OpenShift
 1. Log in to OpenShift Console.
 2. Type Perl in the Catalog and select Perl Builder
-3. Select a new project name, give it an application name, the latest Perl version and the the GitHub URL: https://github.com/SLionB/noise.git
+3. Select a new project name, give it an application name, the latest Perl version and the the GitHub URL: https://github.com/SLionB/logbackgen.git
 4. After the pod is deployed edit deployment config yaml file and apply the following change
 ```
    spec:
       containers:
         - args:
-            - /opt/app-root/src/noise.pl
+            - /opt/app-root/src/logbackgen.pl
           command:
             - perl
  ``` 
