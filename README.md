@@ -1,4 +1,4 @@
-# Perl application that generates Spring Boot Logs
+# Perl application that generates Spring Boot Logback Logs
 ## How it works
 Spring Boot logs are Logback formatted as the following samples:
 ```
